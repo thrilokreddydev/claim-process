@@ -6,6 +6,6 @@ import com.claims.model.Claims;
 
 public interface ClaimsDAO extends JpaRepository<Claims, Integer> {
 
-	Claims findByClaimId(int vehicleVin);
+	Claims findByClaimId(int claimId);
 
 }
