@@ -11,7 +11,7 @@ import com.claims.dao.ClaimsDAO;
 import com.claims.model.Claims;
 
 @RestController
-public class ClaimsController {
+public class ClaimProcessController {
 	
 	@Autowired
 	private ClaimsDAO claimsDAO;
