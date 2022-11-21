@@ -1,4 +1,4 @@
-package com.claims.config;
+package com.claim.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,9 +25,9 @@ public class SecurityConfig {
 	@Bean
 	public InMemoryUserDetailsManager userDetailsService() {
 	    UserDetails user = User
-	        .withUsername("user")
-	        .password("{noop}password")
-	        .roles("USER")
+	        .withUsername("claimProcessId")
+	        .password("{noop}claimProcessPass")
+	        .roles()
 	        .build();
 	   return new InMemoryUserDetailsManager(user);
 	}
