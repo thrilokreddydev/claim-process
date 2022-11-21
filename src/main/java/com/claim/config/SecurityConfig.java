@@ -10,26 +10,17 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-	
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	    http
-	         .csrf().disable()
-	         .authorizeRequests().anyRequest().authenticated()
-	         .and()
-	         .httpBasic();
-
-	    return http.build();
+		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().httpBasic();
+		return http.build();
 	}
 
 	@Bean
 	public InMemoryUserDetailsManager userDetailsService() {
-	    UserDetails user = User
-	        .withUsername("claimProcessId")
-	        .password("{noop}claimProcessPass")
-	        .roles()
-	        .build();
-	   return new InMemoryUserDetailsManager(user);
+		UserDetails user = User.withUsername("claimProcessId").password("{noop}claimProcessPass").roles().build();
+		return new InMemoryUserDetailsManager(user);
 	}
 
 }

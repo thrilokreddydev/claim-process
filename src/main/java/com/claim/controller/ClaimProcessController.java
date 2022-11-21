@@ -13,18 +13,18 @@ import com.claim.processor.ClaimProcessProcessor;
 
 @RestController
 public class ClaimProcessController {
-	
+
 	@Autowired
 	private ClaimProcessProcessor claimProcessProcessor;
-	
+
 	@PutMapping("/updateClaimStatus")
-	public ResponseEntity<ClaimStatus> updateClaimStatus(@RequestBody ClaimStatus claimStatus) {	
-		return ResponseEntity.ok().body(claimProcessProcessor.updateClaimStatus(claimStatus));		
+	public ResponseEntity<ClaimStatus> updateClaimStatus(@RequestBody ClaimStatus claimStatus) {
+		return ResponseEntity.ok().body(claimProcessProcessor.updateClaimStatus(claimStatus));
 	}
-	
+
 	@GetMapping("/getClaimStatus/{claimId}")
-	public ResponseEntity<ClaimStatus> getClaimStatus(@PathVariable long claimId){
-		return ResponseEntity.ok().body(claimProcessProcessor.getClaimStatus(claimId));	
+	public ResponseEntity<ClaimStatus> getClaimStatus(@PathVariable long claimId) {
+		return ResponseEntity.ok().body(claimProcessProcessor.getClaimStatus(claimId));
 	}
 
 }
